@@ -1,0 +1,62 @@
+нояб. 17, 2022 2:19:51 PM Servers.ServerPart main
+INFO: Server - client accepted
+нояб. 17, 2022 2:19:58 PM Servers.ServerPart main
+INFO: Server -  receive command find Галілей, 
+нояб. 17, 2022 2:19:58 PM Servers.ServerPart сommandAnother
+INFO: Server: команда find не знайшла такого контексту
+нояб. 17, 2022 2:19:58 PM Servers.ServerPart main
+INFO: Server - client accepted
+нояб. 17, 2022 2:20:05 PM Servers.ServerPart main
+INFO: Server -  receive command Find Церква
+нояб. 17, 2022 2:20:05 PM Servers.ServerPart сommandAnother
+INFO: Server: команда find знайшла такой контекст
+нояб. 17, 2022 2:20:05 PM Servers.ServerPart main
+INFO: Server - client accepted
+нояб. 17, 2022 2:20:28 PM Servers.ServerPart main
+INFO: Server -  receive command find тато
+нояб. 17, 2022 2:20:28 PM Servers.ServerPart сommandAnother
+INFO: Server: команда find не знайшла такого контексту
+нояб. 17, 2022 2:20:28 PM Servers.ServerPart main
+INFO: Server - client accepted
+нояб. 17, 2022 2:24:07 PM Servers.ServerPart main
+INFO: Server -  receive command findd
+нояб. 17, 2022 2:24:07 PM Servers.ServerPart сommandAnother
+INFO: Server: невідома команда
+нояб. 17, 2022 2:24:07 PM Servers.ServerPart main
+INFO: Server - client accepted
+нояб. 17, 2022 2:24:10 PM Servers.ServerPart main
+INFO: Server -  receive command oeoeo
+нояб. 17, 2022 2:24:10 PM Servers.ServerPart сommandAnother
+INFO: Server: невідома команда
+нояб. 17, 2022 2:24:10 PM Servers.ServerPart main
+INFO: Server - client accepted
+нояб. 17, 2022 2:24:17 PM Servers.ServerPart main
+INFO: Server -  receive command He lp
+нояб. 17, 2022 2:24:17 PM Servers.ServerPart сommandAnother
+INFO: Server: невідома команда
+нояб. 17, 2022 2:24:17 PM Servers.ServerPart main
+INFO: Server - client accepted
+нояб. 17, 2022 2:24:58 PM Servers.ServerPart main
+INFO: Server -  receive command find , що
+нояб. 17, 2022 2:24:58 PM Servers.ServerPart сommandAnother
+INFO: Server: команда find знайшла такой контекст
+нояб. 17, 2022 2:24:58 PM Servers.ServerPart main
+INFO: Server - client accepted
+нояб. 17, 2022 2:25:03 PM Servers.ServerPart main
+INFO: Server -  receive command find що
+нояб. 17, 2022 2:25:03 PM Servers.ServerPart сommandAnother
+INFO: Server: команда find знайшла такой контекст
+нояб. 17, 2022 2:25:03 PM Servers.ServerPart main
+INFO: Server - client accepted
+нояб. 17, 2022 2:25:25 PM Servers.ServerPart main
+INFO: Server -  receive command find гал
+нояб. 17, 2022 2:25:25 PM Servers.ServerPart сommandAnother
+INFO: Server: команда find не знайшла такого контексту
+нояб. 17, 2022 2:25:25 PM Servers.ServerPart main
+INFO: Server - client accepted
+нояб. 17, 2022 2:25:28 PM Servers.ServerPart main
+INFO: Server -  receive command find Гал
+нояб. 17, 2022 2:25:28 PM Servers.ServerPart сommandAnother
+INFO: Server: команда find знайшла такой контекст
+нояб. 17, 2022 2:25:28 PM Servers.ServerPart main
+INFO: Server - client accepted
