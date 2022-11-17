@@ -1,0 +1,36 @@
+нояб. 17, 2022 3:06:20 PM Servers.ServerPart main
+INFO: client accepted
+нояб. 17, 2022 3:06:22 PM Servers.ServerPart main
+INFO: receive command who
+нояб. 17, 2022 3:06:22 PM Servers.ServerPart commandWho
+INFO: Server: команда who визвана
+нояб. 17, 2022 3:06:22 PM Servers.ServerPart main
+INFO: client accepted
+нояб. 17, 2022 3:06:26 PM Servers.ServerPart main
+INFO: receive command fina Церква
+нояб. 17, 2022 3:06:26 PM Servers.ServerPart сommandAnother
+INFO: Server: невідома команда
+нояб. 17, 2022 3:06:26 PM Servers.ServerPart main
+INFO: client accepted
+нояб. 17, 2022 3:06:31 PM Servers.ServerPart main
+INFO: receive command find Церква
+нояб. 17, 2022 3:06:31 PM Servers.ServerPart сommandAnother
+INFO: Server: команда find знайшла такой контекст
+нояб. 17, 2022 3:06:31 PM Servers.ServerPart main
+INFO: client accepted
+нояб. 17, 2022 3:06:33 PM Servers.ServerPart main
+INFO: receive command help
+нояб. 17, 2022 3:06:33 PM Servers.ServerPart commandHelp
+INFO: Server: команда help визвана
+нояб. 17, 2022 3:06:33 PM Servers.ServerPart main
+INFO: client accepted
+нояб. 17, 2022 3:06:34 PM Servers.ServerPart main
+INFO: receive command dwdasd
+нояб. 17, 2022 3:06:34 PM Servers.ServerPart сommandAnother
+INFO: Server: невідома команда
+нояб. 17, 2022 3:06:34 PM Servers.ServerPart main
+INFO: client accepted
+нояб. 17, 2022 3:06:37 PM Servers.ServerPart main
+INFO: receive command exit
+нояб. 17, 2022 3:06:37 PM Servers.ServerPart commandExit
+INFO: Server - exit client
