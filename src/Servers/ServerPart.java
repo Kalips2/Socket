@@ -5,8 +5,10 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.*;
+import java.util.logging.FileHandler;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 public class ServerPart {
 
@@ -23,23 +25,28 @@ public class ServerPart {
 
     private static final String path = "D:\\Рабочий стол\\JavaPractice\\SocketLabaAOS\\src\\resources\\text.txt";
 
-    private static final Logger log = Logger.getLogger(String.valueOf(ServerPart.class));
+    private static final String LOG_PATH = "src/ServerLogs";
+    private static Logger logger = Logger.getLogger("ServerLogger");
+    private static FileHandler fh;
 
     public static void main(String[] args) throws IOException {
-        LogManager.getLogManager().readConfiguration(
-                ServerPart.class.getResourceAsStream("/logging.properties"));
+        fh = new FileHandler(LOG_PATH);
+        logger.addHandler(fh);
+        logger.setUseParentHandlers(false);
+        SimpleFormatter formatter = new SimpleFormatter();
+        fh.setFormatter(formatter);
         serverSocket = new ServerSocket(PORT);
         try {
             while (true) {
                 try {
                     client = serverSocket.accept();
-                    log.info("Server - client accepted");
+                    logger.info("client accepted");
                     bufferedReader = new BufferedReader(new InputStreamReader(client.getInputStream()));
                     bufferedWriter = new BufferedWriter(new OutputStreamWriter(client.getOutputStream()));
 
 
                     command = bufferedReader.readLine();
-                    log.info("Server -  receive command " + command);
+                    logger.info("receive command " + command);
                     checkCommand(command);
 
                 } catch (Exception e) {
@@ -61,12 +68,12 @@ public class ServerPart {
             }
         } catch (Exception e) {
             sentMessageToClient("Сталась помилка! Спробуйте ще раз!");
-            log.info("Server: сталася помилка");
+            logger.info("Server: сталася помилка");
         }
     }
 
     private static void commandExit() throws IOException {
-        log.info("Server - exit client");
+        logger.info("Server - exit client");
         bufferedWriter.close();
         bufferedReader.close();
         client.close();
@@ -79,7 +86,7 @@ public class ServerPart {
         String[] parser = command.split(" ");
         if (parser.length < 2 || !parser[0].toLowerCase().equals("find")) {
             sentMessageToClient("Такої команди не існує! Спробуйте ще раз!");
-            log.info("Server: невідома команда");
+            logger.info("Server: невідома команда");
             return;
         }
 
@@ -122,7 +129,7 @@ public class ServerPart {
         }
         if (result.size() == 0) {
             sentMessageToClient("\t" + "В файлі немає такого контексту!");
-            log.info("Server: команда find не знайшла такого контексту");
+            logger.info("Server: команда find не знайшла такого контексту");
         }
         else {
             StringBuilder _result = new StringBuilder();
@@ -132,7 +139,7 @@ public class ServerPart {
                 _result.append((i + 1) + ") " + result.get(i) + "\n");
             }
             sentMessageToClient(_result.toString());
-            log.info("Server: команда find знайшла такой контекст");
+            logger.info("Server: команда find знайшла такой контекст");
         }
 
     }
@@ -155,7 +162,7 @@ public class ServerPart {
         builder.append("У разі введення функцій не зі списку, зобразиться відповідне повідомлення та потребує повторного вводу." + "\n");
         builder.append("4. exit" + "\t" + " - Від'єднання від серверу. Вихід з клієнту." + "\n");
         sentMessageToClient(builder.toString());
-        log.info("Server: команда help визвана");
+        logger.info("Server: команда help визвана");
     }
 
     private static void commandWho() throws IOException {
@@ -166,6 +173,6 @@ public class ServerPart {
         builder.append("Користувач в клієнті задає контекст (лише із символів клавіатури), клієнт відсилає останній до сервера для виконання контекстного пошуку рядків. " + "\n");
         builder.append("Результати пошуку порядково відсилаються до клієнта. Якщо пошук пустий, то сервер все одно відсилає відповідне попередження." + "\n" );
         sentMessageToClient(builder.toString());
-        log.info("Server: команда who визвана");
+        logger.info("Server: команда who визвана");
     }
 }
