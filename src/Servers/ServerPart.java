@@ -37,6 +37,8 @@ public class ServerPart {
         fh.setFormatter(formatter);
         serverSocket = new ServerSocket(PORT);
         try {
+            client = serverSocket.accept();
+            logger.info("client accepted");
             while (true) {
                 try {
                     client = serverSocket.accept();
@@ -130,8 +132,7 @@ public class ServerPart {
         if (result.size() == 0) {
             sentMessageToClient("\t" + "В файлі немає такого контексту!");
             logger.info("Server: команда find не знайшла такого контексту");
-        }
-        else {
+        } else {
             StringBuilder _result = new StringBuilder();
 
             _result.append("\t" + "Результати пошуку:" + "\n");
@@ -171,7 +172,7 @@ public class ServerPart {
         builder.append("Номер варіанту: 10 - Контексний пошук у файлах " + "\n");
         builder.append("Завдання варіанту: На сервері зберігається файл (достатньо лише текстовий). " + "\n");
         builder.append("Користувач в клієнті задає контекст (лише із символів клавіатури), клієнт відсилає останній до сервера для виконання контекстного пошуку рядків. " + "\n");
-        builder.append("Результати пошуку порядково відсилаються до клієнта. Якщо пошук пустий, то сервер все одно відсилає відповідне попередження." + "\n" );
+        builder.append("Результати пошуку порядково відсилаються до клієнта. Якщо пошук пустий, то сервер все одно відсилає відповідне попередження." + "\n");
         sentMessageToClient(builder.toString());
         logger.info("Server: команда who визвана");
     }
